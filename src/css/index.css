@@ -15,8 +15,13 @@ html {
   background-size: cover;
 }
 
-#right {
+#left {
+  & div {
+    cursor: pointer;
+  }
+}
 
+#right {
   height: 100%;
 }
 
