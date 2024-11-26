@@ -21,6 +21,25 @@ html {
   }
 }
 
+#GK,
+#DC1,
+#DC2,
+#LB,
+#RB,
+#CM,
+#CMD,
+#CAM,
+#RW,
+#LW,
+#ST {
+
+  & img:hover {
+    background-color: rgba(239, 68, 68, 0.404);
+    border-radius: 20px;
+    box-shadow: 1px 2px 40px 1px rgb(239 68 68);
+  }
+}
+
 #right {
   height: 100%;
 }
