@@ -1,0 +1,21 @@
+header {
+  & img {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  & ul {
+    & a {
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: black;
+        border-bottom: 2px solid black;
+      }
+    }
+  }
+}
