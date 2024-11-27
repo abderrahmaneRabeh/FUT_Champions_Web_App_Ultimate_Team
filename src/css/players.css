@@ -6,8 +6,51 @@ body {
 
 .card_item {
   background: url("../img/card1.webp") no-repeat;
-  height: 300px;
-  width: 200px;
+  height: 220px;
+  width: 160px;
   background-size: 113%;
   background-position: center;
+  transition: all 0.2s ease-in-out;
+
+
+  &:hover {
+    transform: scale(0.98);
+  }
+}
+
+.stats p {
+  font-size: 0.6rem;
+}
+
+.rate_item span {
+  font-size: 0.8rem;
+}
+
+.edit_del span {
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
+
+form input {
+  border: 1px rgba(255, 0, 0, 0.44) solid;
+  padding: 3px;
+  border-radius: 10px;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.4em;
+
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(239 68 68);
+
 }
