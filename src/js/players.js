@@ -118,87 +118,109 @@ function addToPlayers() {
   console.log(players);
 }
 
+
+if (players.length == 0) {
+  list_players.innerHTML = `<div class="w-full mt-32 font-bold text-xl text-center">Aucun joueur, ajouté nouveau joueur</div>`;
+}
+
 // Ajouter les joueurs dans HTML
-function displayPlayers() {
+function displayPlayers(filter = []) {
 
   list_players.innerHTML = "";
-  players.forEach(item => {
 
+
+  if (filter.length == 0) {
+    filter = players;
+  }
+
+  filter.forEach((item) => {
     list_players.innerHTML += `
         
-          <div class="relative flex flex-col items-center justify-center gap-1 text-white card_item" id="${item.id}">
-        <div class="flex ">
-          <div class="flex flex-col items-center absolute left-[20px] top-[60px]">
-            <span class="font-bold">${item.Rate}</span>
-            <span>${item.position}</span>
-          </div>
-          <img
-            src="${item.image}"
-            alt="arsenal player" class="w-32 h-32" />
-        </div>
-        <h1 class="font-bold">${item.name}</h1>
-       ${item.position == "GK" ? `
-        <div class="flex gap-2 text-xs stats">
-           <div class="text-center pace">
-            <p>REF</p>
-            <p class="font-bold">${item.status.ref}</p>
-          </div>
-          <div class="text-center shot">
-            <p>POS</p>
-            <p class="font-bold">${item.status.pos}</p>
-          </div>
-          <div class="text-center PAS">
-            <p>KICK</p>
-            <p class="font-bold">${item.status.kick}</p>
-          </div>
-          <div class="text-center DRI">
-            <p>HAND</p>
-            <p class="font-bold">${item.status.hand}</p>
-          </div>
-          <div class="text-center PHY">
-            <p>PEN</p>
-            <p class="font-bold">${item.status.pen}</p>
-          </div>
-        </div>
-        ` : `
-        <div class="flex gap-2 text-xs stats">
-          <div class="text-center pace">
-            <p>PAC</p>
-            <p class="font-bold">${item.status.pace}</p>
-          </div>
-          <div class="text-center shot">
-            <p>SHO</p>
-            <p class="font-bold">${item.status.shot}</p>
-          </div>
-          <div class="text-center PAS">
-            <p>PAS</p>
-            <p class="font-bold">${item.status.pas}</p>
-          </div>
-          <div class="text-center DRI">
-            <p>DEF</p>
-            <p class="font-bold">${item.status.dri}</p>
-          </div>
-          <div class="text-center PHY">
-            <p>PHY</p>
-            <p class="font-bold">${item.status.phy}</p>
-          </div>
-        </div>
-        `}
-        <div class="flex gap-1">
-          <img class="w-6 h-4"
-            src="https://cdn3.futbin.com/content/fifa25/img/nation/18.png?fm=png&ixlib=java-2.1.0&w=44&s=1753c56fa9da22457a16a2cf0f90184c"
-            alt="nationalité flag" />
+    <div class="relative flex flex-col items-center justify-center gap-1 text-white card_item" id="${item.id}">
+  <div class="flex ">
+    <div class="flex flex-col items-center absolute left-[20px] top-[60px]">
+      <span class="font-bold">${item.Rate}</span>
+      <span>${item.position}</span>
+    </div>
+    <img
+      src="${item.image}"
+      alt="arsenal player" class="w-32 h-32" />
+  </div>
+  <h1 class="font-bold">${item.name}</h1>
+ ${item.position == "GK" ? `
+  <div class="flex gap-2 text-xs stats">
+     <div class="text-center pace">
+      <p>REF</p>
+      <p class="font-bold">${item.status.ref}</p>
+    </div>
+    <div class="text-center shot">
+      <p>POS</p>
+      <p class="font-bold">${item.status.pos}</p>
+    </div>
+    <div class="text-center PAS">
+      <p>KICK</p>
+      <p class="font-bold">${item.status.kick}</p>
+    </div>
+    <div class="text-center DRI">
+      <p>HAND</p>
+      <p class="font-bold">${item.status.hand}</p>
+    </div>
+    <div class="text-center PHY">
+      <p>PEN</p>
+      <p class="font-bold">${item.status.pen}</p>
+    </div>
+  </div>
+  ` : `
+  <div class="flex gap-2 text-xs stats">
+    <div class="text-center pace">
+      <p>PAC</p>
+      <p class="font-bold">${item.status.pace}</p>
+    </div>
+    <div class="text-center shot">
+      <p>SHO</p>
+      <p class="font-bold">${item.status.shot}</p>
+    </div>
+    <div class="text-center PAS">
+      <p>PAS</p>
+      <p class="font-bold">${item.status.pas}</p>
+    </div>
+    <div class="text-center DRI">
+      <p>DEF</p>
+      <p class="font-bold">${item.status.dri}</p>
+    </div>
+    <div class="text-center PHY">
+      <p>PHY</p>
+      <p class="font-bold">${item.status.phy}</p>
+    </div>
+  </div>
+  `}
+  <div class="flex gap-1">
+    <img class="w-6 h-4"
+      src="https://cdn3.futbin.com/content/fifa25/img/nation/18.png?fm=png&ixlib=java-2.1.0&w=44&s=1753c56fa9da22457a16a2cf0f90184c"
+      alt="nationalité flag" />
 
-          <img
-            src="https://cdn3.futbin.com/content/fifa25/img/league/dark/13.png?fm=png&ixlib=java-2.1.0&verzion=1&w=44&s=18fa65dd539f7a4c11622711afeecb1f"
-            alt="" class="w-6 h-4" />
-          <img class="w-6 h-4"
-            src="https://cdn3.futbin.com/content/fifa25/img/clubs/dark/1.png?fm=png&ixlib=java-2.1.0&verzion=2&w=44&s=7b4e8535a9ec8a9fc1a5d2ef83e7322a"
-            alt="club logo" />
-        </div>
-      </div>
-        `;
+    <img
+      src="https://cdn3.futbin.com/content/fifa25/img/league/dark/13.png?fm=png&ixlib=java-2.1.0&verzion=1&w=44&s=18fa65dd539f7a4c11622711afeecb1f"
+      alt="" class="w-6 h-4" />
+    <img class="w-6 h-4"
+      src="https://cdn3.futbin.com/content/fifa25/img/clubs/dark/1.png?fm=png&ixlib=java-2.1.0&verzion=2&w=44&s=7b4e8535a9ec8a9fc1a5d2ef83e7322a"
+      alt="club logo" />
+  </div>
+</div>
+  `;
   })
-
-
 }
+
+
+// rEchercher les joueurs
+let search = document.querySelector(".search");
+
+function searchPlayer() {
+  let filter = players.filter((item) => {
+    return item.name.toLowerCase().includes(search.value.toLowerCase());
+  });
+
+  displayPlayers(filter);
+}
+
+search.addEventListener("input", searchPlayer);
