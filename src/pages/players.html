@@ -33,7 +33,7 @@
   </header>
   <main class="carts">
     <div class="flex items-center justify-around gap-5 mt-2">
-      <div><button id="ajouter_player" class="px-4 py-2 text-white bg-red-500 rounded-lg">Ajouter un joueur</button>
+      <div><button id="ajouter_player_btn" class="px-4 py-2 text-white bg-red-500 rounded-lg">Ajouter un joueur</button>
       </div>
       <div>
         <input type="text" placeholder="Rechercher un joueur"
@@ -41,6 +41,53 @@
         <button class="px-5 py-2 text-white bg-red-700 border-2 border-orange-600 rounded-3xl">Rechercher</button>
       </div>
     </div>
+
+    <!-- pop up formule to add new player -->
+
+    <div id="pop_up" class="absolute hidden justify-center w-full bg-slate-200 p-5 h-[50vh] items-center ">
+      <form action="" id="player_form" class="flex flex-col gap-6">
+        <div class="flex justify-between">
+          <div>
+            <input type="text" name="player_name" id="player_name" placeholder="Nom" />
+          </div>
+          <div>
+            <input type="text" name="player_image" id="player_image" placeholder="Image" />
+          </div>
+        </div>
+        <div>
+          <select name="position" id="position">
+            <option value="GK">GK</option>
+            <option value="LB">LB</option>
+            <option value="RB">RB</option>
+            <option value="DC">DC</option>
+            <option value="MC">MC</option>
+            <option value="CAM">CAM</option>
+            <option value="CDM">CDM</option>
+            <option value="RW">RW</option>
+            <option value="LW">LW</option>
+            <option value="ST">ST</option>
+          </select>
+        </div>
+        <div id="twice" class="hidden">
+          <input type="text" placeholder="PACE" id="PACE">
+          <input type="text" placeholder="PAS" id="PAS">
+        </div>
+        <div id="ten_stats" class="hidden">
+          <input type="text" placeholder="SHOT" id="SHOT">
+          <input type="text" placeholder="DRI" id="DRI">
+          <input type="text" placeholder="PHY" id="PHY">
+        </div>
+        <div id="gk_stats" class="hidden">
+          <input type="text" placeholder="REF" id="REF">
+          <input type="text" placeholder="POS" id="POS">
+          <input type="text" placeholder="KICK" id="KICK">
+        </div>
+
+        <button class="w-24 m-auto bg-red-500 rounded-xl" id="Ajouter">Ajouter</button>
+      </form>
+    </div>
+
+
     <section class="flex gap-2 w-[70%] mx-auto">
       <div class="flex flex-col items-center justify-center gap-1 text-white card_item">
         <img
