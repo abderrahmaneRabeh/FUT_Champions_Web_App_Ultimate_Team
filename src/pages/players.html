@@ -44,7 +44,7 @@
 
     <!-- pop up formule to add new player -->
 
-    <div id="pop_up" class="absolute hidden justify-center w-full bg-slate-200 p-5 h-[50vh] items-center ">
+    <div id="pop_up" class="absolute z-50  hidden justify-center w-full bg-slate-200 p-5 h-[50vh] items-center ">
       <form action="" id="player_form" class="flex flex-col gap-6">
         <div class="flex justify-between">
           <div>
@@ -54,8 +54,20 @@
             <input type="text" name="player_image" id="player_image" placeholder="Image" />
           </div>
         </div>
+        <div class="flex justify-between">
+          <div>
+            <input type="text" name="player_club" id="player_club" placeholder="Club" />
+          </div>
+          <div>
+            <input type="text" name="player_nationalite" id="player_nationalite" placeholder="Nationalité" />
+          </div>
+          <div>
+            <input type="text" name="player_league" id="player_league" placeholder="League" />
+          </div>
+        </div>
         <div>
           <select name="position" id="position">
+            <option value="">Choisiez votre position</option>
             <option value="GK">GK</option>
             <option value="LB">LB</option>
             <option value="RB">RB</option>
@@ -68,11 +80,9 @@
             <option value="ST">ST</option>
           </select>
         </div>
-        <div id="twice" class="hidden">
+        <div id="all_stats" class="hidden">
           <input type="text" placeholder="PACE" id="PACE">
           <input type="text" placeholder="PAS" id="PAS">
-        </div>
-        <div id="ten_stats" class="hidden">
           <input type="text" placeholder="SHOT" id="SHOT">
           <input type="text" placeholder="DRI" id="DRI">
           <input type="text" placeholder="PHY" id="PHY">
@@ -81,6 +91,8 @@
           <input type="text" placeholder="REF" id="REF">
           <input type="text" placeholder="POS" id="POS">
           <input type="text" placeholder="KICK" id="KICK">
+          <input type="text" placeholder="HAND" id="HAND">
+          <input type="text" placeholder="PEN" id="PEN">
         </div>
 
         <button class="w-24 m-auto bg-red-500 rounded-xl" id="Ajouter">Ajouter</button>
@@ -88,11 +100,18 @@
     </div>
 
 
-    <section class="flex gap-2 w-[70%] mx-auto">
-      <div class="flex flex-col items-center justify-center gap-1 text-white card_item">
-        <img
-          src="https://cdn3.futbin.com/content/fifa25/img/players/222665.png?fm=png&ixlib=java-2.1.0&verzion=1&w=314&s=36bec85d8eca7008cb1325f40e98e968"
-          alt="arsenal player" class="w-36 h-36" />
+    <section id="list_players" class="flex gap-2 w-[70%] mx-auto">
+      <div class="relative flex flex-col items-center justify-center gap-1 text-white card_item">
+        <div class="flex ">
+          <div class="flex flex-col items-center absolute left-[20px] top-[60px]">
+            <span class="font-bold">90</span>
+            <span>CAM</span>
+          </div>
+          <img
+            src="
+              https://cdn3.futbin.com/content/fifa25/img/players/222665.png?fm=png&ixlib=java-2.1.0&verzion=1&w=314&s=36bec85d8eca7008cb1325f40e98e968"
+            alt="arsenal player" class="w-32 h-32" />
+        </div>
         <h1 class="font-bold">Ødegaard</h1>
         <div class="flex gap-2 text-xs stats">
           <div class="text-center pace">
@@ -129,11 +148,17 @@
             alt="club logo" />
         </div>
       </div>
-      <div class="flex flex-col items-center justify-center gap-1 text-white card_item">
-        <img
-          src="https://cdn3.futbin.com/content/fifa25/img/players/222665.png?fm=png&ixlib=java-2.1.0&verzion=1&w=314&s=36bec85d8eca7008cb1325f40e98e968"
-          alt="arsenal player" class="w-36 h-36" />
-        <h1 class="font-bold">Ødegaard</h1>
+      <div class="relative flex flex-col items-center justify-center gap-1 text-white card_item">
+        <div class="flex ">
+          <div class="flex flex-col items-center absolute left-[20px] top-[60px]">
+            <span class="font-bold">84</span>
+            <span>DC</span>
+          </div>
+          <img
+            src="https://cdn3.futbin.com/content/fifa25/img/players/243715.png?fm=png&ixlib=java-2.1.0&verzion=1&w=314&s=31ea11adf2baad27604842b92c6e7bcc"
+            alt="arsenal player" class="w-32 h-32" />
+        </div>
+        <h1 class="font-bold">SALIBA</h1>
         <div class="flex gap-2 text-xs stats">
           <div class="text-center pace">
             <p>PAC</p>
@@ -169,6 +194,7 @@
             alt="club logo" />
         </div>
       </div>
+
     </section>
   </main>
 
