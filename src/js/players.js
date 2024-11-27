@@ -304,6 +304,7 @@ if (localStorage.getItem("players")) {
 }
 
 displayPlayers();
+sauvegarder_players();
 
 let toggle = true;
 ajouter_player_btn.addEventListener("click", () => {
@@ -502,3 +503,13 @@ search.addEventListener("input", searchPlayer);
 function sauvegarder_players() {
   localStorage.setItem("players", JSON.stringify(players));
 }
+
+// delete player
+function deletePlayer(id) {
+  players = players.filter((item) => item.id != id);
+  displayPlayers(players);
+  sauvegarder_players();
+}
+
+// update player
+

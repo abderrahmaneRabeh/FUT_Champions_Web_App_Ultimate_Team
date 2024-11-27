@@ -24,3 +24,11 @@ close_sidebar.addEventListener("click", () => {
     }
 })
 
+
+//Récuperer les joueurs dans localStorage
+
+if (localStorage.getItem("players")) {
+    let players = JSON.parse(localStorage.getItem("players"));
+    console.log(players);
+
+}
