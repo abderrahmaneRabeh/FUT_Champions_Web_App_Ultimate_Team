@@ -108,30 +108,26 @@
 
             </div>
         </div>
-        <div id="right" class="w-[20%] grid justify-items-center grid-cols-2 bg-white">
+        <div id="right" class="w-[20%] flex flex-col flex-wrap  items-center  bg-white">
             <div class="content-center" id="close_sidebar">
                 <img src="./img/sidebar3.png" alt="close sidebar"
                     class="w-12 transition-all cursor-pointer hover:scale-105">
             </div>
-            <img src="./img/addPlayer.png" class="transition-all cursor-pointer w-28 hover:scale-95" id="substitut-1"
-                alt="Gk image">
-            <img src="./img/addPlayer.png" class="transition-all cursor-pointer w-28 hover:scale-95" id="substitut-2"
-                alt="Gk image">
-            <img src="./img/addPlayer.png" class="transition-all cursor-pointer w-28 hover:scale-95" id="substitut-3"
-                alt="Gk image">
-            <img src="./img/addPlayer.png" class="transition-all cursor-pointer w-28 hover:scale-95" id="substitut-4"
-                alt="Gk image">
-            <img src="./img/addPlayer.png" class="transition-all cursor-pointer w-28 hover:scale-95" id="substitut-5"
-                alt="Gk image">
-            <img src="./img/addPlayer.png" class="transition-all cursor-pointer w-28 hover:scale-95" id="substitut-6"
-                alt="Gk image">
-            <img src="./img/addPlayer.png" class="transition-all cursor-pointer w-28 hover:scale-95" id="substitut-7"
-                alt="Gk image">
+            <div>
+                <button id="substitut-1" class="w-20 py-1 text-white bg-red-500 rounded-lg">substitut</button>
+            </div>
+
+
+
+            <div class="flex flex-col flex-wrap gap-1" id="carts">
+
+            </div>
         </div>
     </main>
 
 
-    <section id="players_pop_up" class="fixed top-1/2 left-1/2 gap-5 translate-x-[-75%] translate-y-[-50%] hidden">
+    <section id="players_pop_up"
+        class="fixed top-1/2 left-1/2 gap-5 translate-x-[-75%] flex-wrap translate-y-[-50%] hidden">
     </section>
 
     <script src="./js/main.js"></script>
