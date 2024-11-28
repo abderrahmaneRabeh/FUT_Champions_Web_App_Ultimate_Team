@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fut Champions web app | Update</title>
+    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="../css/input.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/players.css">
+    <link rel="shortcut icon" href="../img/EA.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="">
+
+    <header class="border-white border-y-4">
+        <nav class="flex flex-wrap items-center py-3 text-white bg-red-500 justify-evenly">
+            <a href="../index.html"><img src="https://www.arsenal.com/themes/custom/arsenal_main/logo.svg?cb=20240905"
+                    alt="arsenal logo" class="w-20" /></a>
+            <ul class="flex items-center justify-center gap-5 text-xl">
+                <li>
+                    <a href="../index.html"><img src="../img/football.png" class="w-8" alt="squad" /></a>
+                </li>
+                <li>
+                    <a href="./players.html"><img src="../img/equipe.png" class="w-10" alt="players" /></a>
+                </li>
+            </ul>
+
+            <img src="https://drop-assets.ea.com/images/7L56ne8TsLBD7f7Rt4wIMk/8c7869d7233a34407315ddeee8afdbda/G5_FC25_Horizontal_Rev.png?q=40&w=1200"
+                alt="EA LOGO" class="w-20" />
+        </nav>
+    </header>
+    <main class="">
+
+        <div id="pop_up"
+            class="absolute z-50 flex items-center justify-center w-full h-full p-5 bg-gradient-to-b from-white to-red-200">
+            <div class="bg-white rounded-2xl shadow-xl flex flex-col p-6 w-[90%] sm:w-[500px]">
+                <h2 class="mb-4 text-xl font-bold text-center text-red-600">Modifier un joueur</h2>
+                <form id="player_form" class="flex flex-col gap-10">
+                    <!-- Ligne 1 -->
+                    <div class="flex flex-wrap gap-4">
+                        <input type="text" name="player_name" id="player_name" placeholder="Nom" class="input-field" />
+                        <input type="text" name="player_image" id="player_image" placeholder="Image URL"
+                            class="input-field" />
+                        <input type="text" name="player_rate" id="player_rate" placeholder="Note" class="input-field" />
+                    </div>
+                    <!-- Ligne 2 -->
+                    <div class="flex flex-wrap gap-4">
+                        <input type="text" name="player_club" id="player_club" placeholder="Club" class="input-field" />
+                        <input type="text" name="player_nationalite" id="player_nationalite" placeholder="Nationalité"
+                            class="input-field" />
+                        <input type="text" name="player_league" id="player_league" placeholder="Ligue"
+                            class="input-field" />
+                    </div>
+                    <!-- Position -->
+                    <div>
+                        <select name="position" id="position" class="input-field">
+                            <option value="">Modifier votre position</option>
+                            <option value="GK">Gardien (GK)</option>
+                            <option value="LB">Latéral Gauche (LB)</option>
+                            <option value="RB">Latéral Droit (RB)</option>
+                            <option value="DC">Défenseur Central (DC)</option>
+                            <option value="MC">Milieu Centre (MC)</option>
+                            <option value="CAM">Milieu Offensif (CAM)</option>
+                            <option value="CDM">Milieu Défensif (CDM)</option>
+                            <option value="RW">Ailier Droit (RW)</option>
+                            <option value="LW">Ailier Gauche (LW)</option>
+                            <option value="ST">Attaquant (ST)</option>
+                        </select>
+                    </div>
+                    <!-- Stats -->
+                    <div id="all_stats" class="flex-wrap hidden gap-4 ">
+                        <input type="text" placeholder="Vitesse (PACE)" id="PACE" class="input-field" />
+                        <input type="text" placeholder="Passes (PAS)" id="PAS" class="input-field" />
+                        <input type="text" placeholder="Tir (SHOT)" id="SHOT" class="input-field" />
+                        <input type="text" placeholder="Dribble (DRI)" id="DRI" class="input-field" />
+                        <input type="text" placeholder="Physique (PHY)" id="PHY" class="input-field" />
+                    </div>
+                    <div id="gk_stats" class="flex-wrap hidden gap-4 ">
+                        <input type="text" placeholder="Réflexes (REF)" id="REF" class="input-field" />
+                        <input type="text" placeholder="Positionnement (POS)" id="POS" class="input-field" />
+                        <input type="text" placeholder="Dégagement (KICK)" id="KICK" class="input-field" />
+                        <input type="text" placeholder="Main (HAND)" id="HAND" class="input-field" />
+                        <input type="text" placeholder="Penalties (PEN)" id="PEN" class="input-field" />
+                    </div>
+                    <!-- Bouton -->
+                    <button id="Ajouter"
+                        class="w-full py-2 font-bold text-white transition-all bg-red-500 rounded-lg hover:bg-red-600">
+                        Modifier
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/update.js"></script>
+</body>
+
+</html>

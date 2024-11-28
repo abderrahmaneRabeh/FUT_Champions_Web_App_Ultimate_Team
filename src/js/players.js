@@ -513,3 +513,10 @@ function deletePlayer(id) {
 
 // update player
 
+function updatePlayer(id) {
+  let player = players.find((item) => item.id == id);
+
+  localStorage.setItem("update_player", JSON.stringify(player));
+  window.location.href = "./update.html";
+}
+
