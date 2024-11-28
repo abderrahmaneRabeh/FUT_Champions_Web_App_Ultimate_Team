@@ -11,8 +11,6 @@ body {
   background-size: 113%;
   background-position: center;
   transition: all 0.2s ease-in-out;
-
-
   &:hover {
     transform: scale(0.98);
   }
@@ -43,7 +41,6 @@ form input {
 
 ::-webkit-scrollbar {
   width: 0.4em;
-
 }
 
 ::-webkit-scrollbar-track {
@@ -52,5 +49,4 @@ form input {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(239 68 68);
-
 }
