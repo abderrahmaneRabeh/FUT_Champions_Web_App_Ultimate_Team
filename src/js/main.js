@@ -14,6 +14,7 @@ let RW = document.getElementById("RW");
 let LW = document.getElementById("LW");
 let ST = document.getElementById("ST");
 
+
 // substituer les joueurs
 
 let sub_1 = document.getElementById("substitut-1");
@@ -112,6 +113,9 @@ RB.addEventListener("click", () => {
     }, 2000)
 
 });
+
+let def_1 = false;
+let def_2 = false;
 DC_1.addEventListener("click", () => {
 
     setUpPopUp();
@@ -119,6 +123,9 @@ DC_1.addEventListener("click", () => {
     let players = filterPlayersByPosition("DC");
 
     displayPlayers(players);
+
+    def_1 = true;
+    def_2 = false;
 
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
@@ -129,6 +136,9 @@ DC_1.addEventListener("click", () => {
 DC_2.addEventListener("click", () => {
 
     setUpPopUp();
+
+    def_1 = false;
+    def_2 = true;
 
     let players = filterPlayersByPosition("DC");
 
@@ -384,10 +394,11 @@ function AddaPlayerToTeam(id) {
             RB.innerHTML = playerData(player, true);
             break;
         case "DC":
-            DC_1.innerHTML = playerData(player);
-            break;
-        case "DC":
-            DC_2.innerHTML = playerData(player);
+            if (def_1) {
+                DC_1.innerHTML = playerData(player);
+            } else {
+                DC_2.innerHTML = playerData(player);
+            }
             break;
         case "CM":
             MC.innerHTML = playerData(player);
