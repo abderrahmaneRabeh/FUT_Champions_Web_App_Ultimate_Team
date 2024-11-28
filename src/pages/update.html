@@ -41,7 +41,8 @@
                 <form id="player_form" class="flex flex-col gap-10">
                     <!-- Ligne 1 -->
                     <div class="flex flex-wrap gap-4">
-                        <input type="text" name="player_name" id="player_name" placeholder="Nom" class="input-field" />
+                        <input type="text" name="player_name" id="player_name" placeholder="Nom"
+                            class="input-field" /><span id="error" class="text-sm text-red-600"></span>
                         <input type="text" name="player_image" id="player_image" placeholder="Image URL"
                             class="input-field" />
                         <input type="text" name="player_rate" id="player_rate" placeholder="Note" class="input-field" />
@@ -71,6 +72,7 @@
                         </select>
                     </div>
                     <!-- Stats -->
+                    <span id="error_stats" class="text-sm text-red-600"></span>
                     <div id="all_stats" class="flex-wrap hidden gap-4 ">
                         <input type="text" placeholder="Vitesse (PACE)" id="PACE" class="input-field" />
                         <input type="text" placeholder="Passes (PAS)" id="PAS" class="input-field" />
@@ -96,6 +98,7 @@
     </main>
 
     <script src="../js/update.js"></script>
+    <script src="../js/regex.js"></script>
 </body>
 
 </html>

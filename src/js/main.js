@@ -69,50 +69,33 @@ function filterPlayersByPosition(position) {
     return players.filter(player => player.position === position);
 }
 
-GK.addEventListener("click", () => {
+function popUp(input, position) {
 
-    setUpPopUp();
+    input.addEventListener("click", () => {
+        setUpPopUp();
 
-    let players = filterPlayersByPosition("GK");
-    displayPlayers(players);
+        let players = filterPlayersByPosition(position);
 
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
+        displayPlayers(players);
 
-});
-LB.addEventListener("click", () => {
+        setTimeout(() => {
+            players_pop_up.classList.remove("flex");
+            players_pop_up.classList.add("hidden");
+        }, 2000)
 
-    setUpPopUp();
+    })
 
-    let players = filterPlayersByPosition("LB");
+}
 
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
-
-
-});
-RB.addEventListener("click", () => {
-
-    setUpPopUp();
-
-    players_pop_up.innerHTML = "";
-
-    let players = filterPlayersByPosition("RB");
-
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
-
-});
+popUp(GK, "GK");
+popUp(LB, "LB");
+popUp(RB, "RB");
+popUp(MC, "CM");
+popUp(CAM, "CAM");
+popUp(CDM, "CDM");
+popUp(RW, "RW");
+popUp(LW, "LW");
+popUp(ST, "ST");
 
 let def_1 = false;
 let def_2 = false;
@@ -151,89 +134,7 @@ DC_2.addEventListener("click", () => {
 
 
 });
-MC.addEventListener("click", () => {
 
-    setUpPopUp();
-
-    let players = filterPlayersByPosition("CM");
-
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
-
-});
-CAM.addEventListener("click", () => {
-
-    setUpPopUp();
-
-    let players = filterPlayersByPosition("CAM");
-
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000);
-
-});
-CDM.addEventListener("click", () => {
-
-    setUpPopUp();
-
-    let players = filterPlayersByPosition("CDM");
-
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
-
-});
-RW.addEventListener("click", () => {
-
-    setUpPopUp();
-
-    let players = filterPlayersByPosition("RW");
-
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
-
-});
-LW.addEventListener("click", () => {
-    setUpPopUp();
-
-    let players = filterPlayersByPosition("LW");
-
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
-
-});
-ST.addEventListener("click", () => {
-
-    setUpPopUp();
-
-    let players = filterPlayersByPosition("ST");
-
-    displayPlayers(players);
-
-    setTimeout(() => {
-        players_pop_up.classList.remove("flex");
-        players_pop_up.classList.add("hidden");
-    }, 2000)
-
-});
 
 function displayPlayers(players = []) {
 

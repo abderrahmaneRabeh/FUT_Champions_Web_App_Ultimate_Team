@@ -336,6 +336,9 @@ player_position.addEventListener("change", () => {
 
 player_form.addEventListener("submit", (e) => {
   e.preventDefault();
+  if (player_nom.value == "" || player_position.value == "" || player_rate.value == "" || player_image.value == "") {
+    return;
+  }
   addToPlayers();
   pop_up.classList.add("hidden");
   pop_up.classList.remove("flex");
@@ -348,7 +351,7 @@ function addToPlayers() {
   let player = {};
   if (player_position.value == "GK") {
     player = {
-      id: players.length + 1,
+      id: players.length + 2,
       name: player_nom.value,
       image: player_image.value,
       position: player_position.value,
@@ -366,7 +369,7 @@ function addToPlayers() {
     }
   } else {
     player = {
-      id: players.length + 1,
+      id: players.length + 2,
       name: player_nom.value,
       image: player_image.value,
       position: player_position.value,

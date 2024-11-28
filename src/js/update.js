@@ -79,6 +79,10 @@ if (localStorage.getItem("update_player")) {
 player_form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    if (player_nom.value == "" || player_position.value == "" || player_rate.value == "" || player_image.value == "") {
+        return;
+    }
+
     if (player_position.value == "GK") {
         player.status = {
             ref: REF.value,
