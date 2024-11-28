@@ -1,0 +1,23 @@
+.card_item {
+  background: url("../img/card1.webp") no-repeat;
+  height: 120px;
+  width: 90px;
+  background-size: 115%;
+  background-position: center;
+}
+
+.stats p {
+  font-size: 0.4rem;
+}
+
+.rate_item span {
+  font-size: 0.5rem;
+}
+
+.name_joueur {
+  font-size: 0.7rem;
+}
+
+.sidebar {
+  width: 80px;
+}
