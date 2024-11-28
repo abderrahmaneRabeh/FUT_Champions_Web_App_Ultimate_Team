@@ -53,7 +53,7 @@ close_sidebar.addEventListener("click", () => {
 })
 
 
-//Récuperer les joueurs dans localStorage
+//Récuperer les joueurs de localStorage
 
 let players = [];
 
@@ -78,8 +78,7 @@ GK.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
-
+    }, 2000)
 
 });
 LB.addEventListener("click", () => {
@@ -93,7 +92,7 @@ LB.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 
 });
@@ -110,7 +109,7 @@ RB.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 });
 DC_1.addEventListener("click", () => {
@@ -124,7 +123,7 @@ DC_1.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 });
 DC_2.addEventListener("click", () => {
@@ -138,7 +137,7 @@ DC_2.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 
 });
@@ -153,7 +152,7 @@ MC.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 });
 CAM.addEventListener("click", () => {
@@ -167,7 +166,7 @@ CAM.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500);
+    }, 2000);
 
 });
 CDM.addEventListener("click", () => {
@@ -181,7 +180,7 @@ CDM.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 });
 RW.addEventListener("click", () => {
@@ -195,7 +194,7 @@ RW.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 });
 LW.addEventListener("click", () => {
@@ -208,7 +207,7 @@ LW.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 });
 ST.addEventListener("click", () => {
@@ -222,17 +221,15 @@ ST.addEventListener("click", () => {
     setTimeout(() => {
         players_pop_up.classList.remove("flex");
         players_pop_up.classList.add("hidden");
-    }, 1500)
+    }, 2000)
 
 });
-
-// Ajouter le remplacant à un position dans l'equipe
 
 function displayPlayers(players = []) {
 
     players.forEach(player => {
         players_pop_up.innerHTML += `
-        <div class="relative cursor-pointer hover:scale-95 transition-transform flex flex-col items-center justify-center text-white card_item" id="${player.id}">
+        <div class="relative cursor-pointer hover:scale-95 transition-transform flex flex-col items-center justify-center text-white card_item" onClick="AddaPlayerToTeam(${player.id})" id="${player.id}">
             <div class="flex">
                 <div class="flex flex-col items-center absolute left-[10px] top-[20px] rate_item">
                     <span class="font-bold">${player.Rate}</span>
@@ -321,4 +318,142 @@ function setUpPopUp() {
     if (players.length == 0) {
         players_pop_up.innerHTML = `<div class="w-full mt-32 font-bold text-xl text-center">Aucun joueur, ajouté nouveau joueur</div>`;
     }
+}
+
+// add cliked player to the right position
+
+function AddaPlayerToTeam(id) {
+
+    let player = players.find((player) => player.id == id);
+
+    switch (player.position) {
+        case "GK":
+            GK.innerHTML = `
+                <div class="relative flex flex-col items-center justify-center text-white card_item">
+                    <div class="flex">
+                        <div class="flex flex-col items-center absolute left-[10px] top-[20px] rate_item">
+                            <span class="font-bold">${player.Rate}</span>
+                            <span>${player.position}</span>
+                        </div>
+                        <img src="${player.image}"
+                            alt="arsenal player" class="w-12 h-12 mt-2">
+                    </div>
+                    <p class="font-bold name_joueur">${player.name}</p>
+
+                    <div class="flex gap-1 text-xs stats">
+                        <div class="text-center pace">
+                        <p>REF</p>
+                        <p class="font-bold">${player.status.ref}</p>
+                        </div>
+                        <div class="text-center shot">
+                        <p>POS</p>
+                        <p class="font-bold">${player.status.pos}</p>
+                        </div>
+                        <div class="text-center PAS">
+                        <p>KICK</p>
+                        <p class="font-bold">${player.status.kick}</p>
+                        </div>
+                        <div class="text-center DRI">
+                        <p>HAND</p>
+                        <p class="font-bold">${player.status.hand}</p>
+                        </div>
+                        <div class="text-center PHY">
+                        <p>PEN</p>
+                        <p class="font-bold">${player.status.pen}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-1 mb-2">
+                        <img class="w-3 h-2"
+                            src="${player.nationalite}"
+                            alt="nationalité flag">
+
+                        <img src="https://cdn3.futbin.com/content/fifa25/img/league/dark/13.png?fm=png&amp;ixlib=java-2.1.0&amp;verzion=1&amp;w=44&amp;s=18fa65dd539f7a4c11622711afeecb1f"
+                            alt="" class="w-3 h-2">
+                        <img class="w-3 h-2"
+                            src="https://cdn3.futbin.com/content/fifa25/img/clubs/dark/1.png?fm=png&amp;ixlib=java-2.1.0&amp;verzion=2&amp;w=44&amp;s=7b4e8535a9ec8a9fc1a5d2ef83e7322a"
+                            alt="club logo">
+                    </div>
+                </div>
+            `
+            break;
+        case "LB":
+            LB.innerHTML = playerData(player, true);
+            break;
+        case "RB":
+            RB.innerHTML = playerData(player, true);
+            break;
+        case "DC":
+            DC_1.innerHTML = playerData(player);
+            break;
+        case "DC":
+            DC_2.innerHTML = playerData(player);
+            break;
+        case "CM":
+            MC.innerHTML = playerData(player);
+            break;
+        case "CAM":
+            CAM.innerHTML = playerData(player, true);
+            break;
+        case "CDM":
+            CDM.innerHTML = playerData(player);
+            break;
+        case "RW":
+            RW.innerHTML = playerData(player);
+            break;
+        case "LW":
+            LW.innerHTML = playerData(player);
+            break;
+        case "ST":
+            ST.innerHTML = playerData(player, true);
+            break;
+    }
+}
+
+function playerData(player, mrg = false) {
+    return `
+            <div class="relative flex flex-col items-center justify-center ${mrg ? "ml-14" : ""} text-white card_item">
+                <div class="flex">
+                    <div class="flex flex-col items-center absolute left-[10px] top-[20px] rate_item">
+                        <span class="font-bold">${player.Rate}</span>
+                        <span>${player.position}</span>
+                    </div>
+                    <img src="${player.image}"
+                        alt="arsenal player" class="w-12 h-12 mt-2">
+                </div>
+                <p class="font-bold name_joueur">${player.name}</p>
+                 <div class="flex gap-2 text-xs stats">
+                    <div class="text-center pace">
+                    <p>PAC</p>
+                    <p class="font-bold">${player.status.pace}</p>
+                    </div>
+                    <div class="text-center shot">
+                    <p>SHO</p>
+                    <p class="font-bold">${player.status.shot}</p>
+                    </div>
+                    <div class="text-center PAS">
+                    <p>PAS</p>
+                    <p class="font-bold">${player.status.pas}</p>
+                    </div>
+                    <div class="text-center DRI">
+                    <p>DEF</p>
+                    <p class="font-bold">${player.status.dri}</p>
+                    </div>
+                    <div class="text-center PHY">
+                    <p>PHY</p>
+                    <p class="font-bold">${player.status.phy}</p>
+                    </div>
+                </div>
+                <div class="flex gap-1 mb-2">
+                    <img class="w-3 h-2"
+                        src="${player.nationalite}"
+                        alt="nationalité flag">
+                    <img src="https://cdn3.futbin.com/content/fifa25/img/league/dark/13.png?fm=png&amp;ixlib=java-2.1.0&amp;verzion=1&amp;w=44&amp;s=18fa65dd539f7a4c11622711afeecb1f"
+                        alt="" class="w-3 h-2">
+                    <img class="w-3 h-2"
+                        src="https://cdn3.futbin.com/content/fifa25/img/clubs/dark/1.png?fm=png&amp;ixlib=java-2.1.0&amp;verzion=2&amp;w=44&amp;s=7b4e8535a9ec8a9fc1a5d2ef83e7322a"
+                        alt="club logo">
+                </div>
+            </div>
+            `
 }
