@@ -313,7 +313,7 @@ function setUpPopUp() {
 
 // add cliked player to the right position
 
-function AddaPlayerToTeam(id) {
+function AddaPlayerToTeam(id, type = fetch) {
 
     let player = players.find((player) => player.id == id);
 
@@ -400,6 +400,13 @@ function AddaPlayerToTeam(id) {
             ST.innerHTML = playerData(player, true);
             break;
     }
+
+    if (type == true) {
+        setTimeout(() => {
+            document.getElementById(id).remove();
+
+        }, 1000)
+    }
 }
 
 function playerData(player, mrg = false) {
@@ -456,7 +463,7 @@ function AddaPlayerToTeamSub(id) {
     let player = players.find(player => player.id == id);
 
     carts.innerHTML += `
-            <div class="relative flex flex-col items-center justify-center text-white card_item" onclick="AddaPlayerToTeam(${player.id})" id="${player.id}">
+            <div class="relative flex flex-col items-center justify-center text-white card_item" onclick="AddaPlayerToTeam(${player.id}, true)" id="${player.id}">
                 <div class="flex">
                     <div class="flex flex-col items-center absolute left-[10px] top-[20px] rate_item">
                         <span class="font-bold">${player.Rate}</span>

@@ -75,7 +75,7 @@ html {
   }
 
   #players_pop_up {
-    flex-wrap: wrap;
-    flex-direction: row;
+    overflow: auto;
+    height: 300px;
   }
 }
