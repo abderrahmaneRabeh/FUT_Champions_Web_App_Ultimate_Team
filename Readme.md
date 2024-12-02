@@ -41,7 +41,7 @@
 
 - **Frontend :**
 
-  - HTML5, CSS3 ( Tailwind CSS, Bootstrap).
+  - HTML5, CSS3 ( Tailwind CSS).
   - JavaScript Vanilla.
 
 - **Gestion des Données :**
