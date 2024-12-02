@@ -19,8 +19,6 @@ regex(player_league, /^[A-Za-z]+$/);
 
 regex(player_rate, /^[0-9{1,2}]+$/);
 
-let stats = [PACE, SHOT, PAS, DRI, PHY, REF, POS, KICK, HAND, PEN];
-
 stats.forEach(stat => {
     stat.addEventListener("input", () => {
         let regex = /^[0-9]{1,2}$/;

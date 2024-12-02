@@ -57,3 +57,25 @@ html {
   background-color: rgb(239 68 68);
 
 }
+
+@media(width < 950px) {
+
+  #app {
+    flex-direction: column;
+  }
+
+  #right {
+    width: 100% !important;
+    flex-direction: row;
+
+  }
+
+  #carts {
+    flex-direction: row;
+  }
+
+  #players_pop_up {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
